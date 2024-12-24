@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteVault 🗝️ - Smart Note Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Note 🗝️</h1>
+            </div>
+            <nav class="sidebar-menu">
+                <button id="newNoteBtn" class="sidebar-btn active">
+                    <i class="bi bi-plus-circle"></i> Buat
+                </button>
+                <div class="category-list">
+                    <h3>Kategori</h3>
+                    <div id="categoryContainer">
+                    </div>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="stats">
+                    <p>Total Catatan: <span id="totalNotesCount">0</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-container">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="searchInput" placeholder="Cari catatan...">
+                </div>
+                <div class="header-actions">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="newest">Terbaru</option>
+                        <option value="oldest">Terlama</option>
+                        <option value="alphabetical">A-Z</option>
+                    </select>
+
+                </div>
+            </header>
+
+            <div id="notesList" class="notes-grid"></div>
+        </main>
+
+        <div id="noteModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Buat Catatan Baru</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="noteTitleInput" placeholder="Judul Catatan" required>
+                    <textarea id="noteContentInput" placeholder="Tulis catatan Anda di sini..." required></textarea>
+                    <div class="note-metadata">
+                        <select id="noteCategory" required>
+                            <option value="">Pilih Kategori</option>
+                            <option value="personal">🏠 Personal</option>
+                            <option value="work">💼 Pekerjaan</option>
+                            <option value="study">📚 Studi</option>
+                            <option value="ideas">💡 Ide</option>
+                            <option value="shopping">🛒 Belanja</option>
+                        </select>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveNoteBtn" class="btn-primary">Simpan Catatan</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="confirmModal" class="modal">
+            <div class="modal-content confirm-modal">
+                <h2>Konfirmasi Hapus</h2>
+                <p>Apakah Anda yakin ingin menghapus catatan ini?</p>
+                <div class="confirm-actions">
+                    <button id="cancelDeleteBtn" class="btn-secondary">Batal</button>
+                    <button id="confirmDeleteBtn" class="btn-danger">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
