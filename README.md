@@ -55,9 +55,10 @@ cd Node
 - JavaScript
 - Love for organized thoughts 💝
 
-## 📱 Screenshots
+## 📱 Preview
 
-[Add your application screenshots here]
+![notepad](notepad.png)
+
 
 ## 🔜 Upcoming Features
 
