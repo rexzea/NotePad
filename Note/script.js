@@ -170,12 +170,10 @@ class NotesApp {
         this.renderNotes(sortedNotes);
     }
 
-    // Slocal torage
     saveNotes() {
         localStorage.setItem('notesAppNotes', JSON.stringify(this.notes));
     }
 
-    // load dari local storage
     loadNotes() {
         const savedNotes = localStorage.getItem('notesAppNotes');
         this.notes = savedNotes ? JSON.parse(savedNotes) : [];
